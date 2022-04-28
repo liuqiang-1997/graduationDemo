@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuqiang.service.mapper.sys.RoleMapper">
+    <sql id="baseColumn">
+        id Id,
+        role_id roleId,
+        role_name roleName,
+        status status,
+        remark remark
+    </sql>
+
+    <select id="selectByRoleId" resultType="com.liuqiang.model.entity.sys.Role">
+        select id, role_id, role_name,status from sys_role where role_id=#{roleId}
+    </select>
+    <select id="roleList" resultType="com.liuqiang.model.bo.sys.RoleBo">
+        select <include refid="baseColumn"/>
+        from sys_role
+        <where>
+            1=1
+            <if test="roleName != null and roleName != ''">
+                and role_name like CONCAT('%',#{roleName},'%')
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </where>
+    </select>
+</mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuqiang.service.mapper.user.UserRelationMapper">
+<sql id="baseColumn">
+    id,stu_id,tea_id,cou_id,collage_code,specialty_code,class_code
+</sql>
+    <select id="getList" resultType="com.liuqiang.model.bo.userinfo.StudentListBo">
+        select <include refid="baseColumn"></include>
+        from sys_student
+        <where>
+            tea_id = #{userNumber}
+            <if test="stuId != null and stuId != ''">
+                and stu_id = #{stuId}
+            </if>
+        </where>
+    </select>
+</mapper>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuqiang.service.mapper.servicelogic.InterviewMapper">
+
+    <select id="selectCompanyType" resultType="java.util.HashMap">
+        select
+        case when company_type = 0 then  '国企'
+        when company_type = 1  then  '私企'
+        when company_type = 2  then  '机关单位'
+        when company_type = 3 then '其他'
+        end 'type',count( company_type) total
+        from pms_interview
+        <where>
+            1=1
+            <if test="stuId != null and stuId != ''">
+                and stu_id = #{stuId}
+            </if>
+            <if test="stuName != null and stuName != ''">
+                and stu_name = #{stuName}
+            </if>
+        </where>
+        group by type;
+    </select>
+    <select id="selectSource" resultType="java.util.HashMap">
+        select source,count( source) total
+        from pms_interview
+        <where>
+            1=1
+            <if test="stuId != null and stuId != ''">
+                and stu_id = #{stuId}
+            </if>
+            <if test="stuName != null and stuName != ''">
+                and stu_name = #{stuName}
+            </if>
+        </where>
+        group by source;
+    </select>
+    <select id="selectPay" resultType="java.util.HashMap">
+        select
+        case when pay between 0 and 3000 then  '1-3k'
+        when pay between 3000 and 5000 then  '3-5k'
+        when pay between 5000 and 10000  then  '5-10k'
+        when pay >=10000 then '>10k'
+        end 'area',count(pay) total
+        from pms_interview
+        <where>
+            1=1
+            <if test="stuId != null and stuId != ''">
+                and stu_id = #{stuId}
+            </if>
+            <if test="stuName != null and stuName != ''">
+                and stu_name = #{stuName}
+            </if>
+        </where>
+        group by area;
+    </select>
+
+    <select id="selectResult" resultType="java.util.HashMap">
+        select
+        case when result = 0 then  '面试'
+        when result = 1 then  '入职'
+        when result = 2  then  '无响应'
+        end 'result',count(pay) total
+        from pms_interview
+        <where>
+            1=1
+            <if test="stuId != null and stuId != ''">
+                and stu_id = #{stuId}
+            </if>
+            <if test="stuName != null and stuName != ''">
+                and stu_name = #{stuName}
+            </if>
+        </where>
+        group by result;
+    </select>
+</mapper>

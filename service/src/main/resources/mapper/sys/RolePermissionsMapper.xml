@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuqiang.service.mapper.sys.RolePermissionsMapper">
+    <sql id="base">
+        id,role_id,permission_id,remark,status
+    </sql>
+    <insert id="insertBatchs" parameterType="com.liuqiang.model.vo.sys.RolePermissionsVo">
+          insert into sys_role_permission
+          <trim  prefix="(" suffix=")" suffixOverrides=",">
+           <if test="rolePermission.roleId != null" >
+             role_id,
+           </if>
+           <if test="list != null">
+             permission_id,
+           </if>
+           <if  test="rolePermission.remark != null">
+               remark,
+           </if>
+           <if test="rolePermission.status != null">
+               status
+           </if>
+
+          </trim>
+           values
+           <foreach collection="list" separator="," index="index" item="item">
+               (#{rolePermission.roleId},#{item},#{rolePermission.remark},#{rolePermission.status})
+           </foreach>
+
+    </insert>
+    <delete id="deleteByRoleId">
+        delete from sys_role_permission where role_id=#{roleId}
+    </delete>
+    <resultMap id="rolePermission" type="com.liuqiang.model.bo.sys.RolePermissionsBo">
+
+        <result column="role_id" property="roleId" jdbcType="INTEGER"/>
+        <result column="role_name" property="roleName" jdbcType="VARCHAR"/>
+        <result column="remark" property="remark" jdbcType="VARCHAR"/>
+        <result column="status" property="status" jdbcType="INTEGER"/>
+        <collection property="permissions"   column="{roleId = role_id}" javaType="arraylist"
+                    select="com.liuqiang.service.mapper.sys.RolePermissionsMapper.permissionList">
+        </collection>
+    </resultMap>
+    <resultMap id="permissions" type="com.liuqiang.model.bo.sys.PermissionInfo">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result property="permissionId" column="permission_id" jdbcType="INTEGER"/>
+        <collection property="permissionInfoBo"   column="{permissionId = permission_id}"
+                    select="com.liuqiang.service.mapper.sys.RolePermissionsMapper.permissionInfo">
+        </collection>
+    </resultMap>
+    <resultMap id="permissionInfo" type="com.liuqiang.model.bo.sys.PermissionInfoBo">
+        <result property="permissionPath" column="permission_path" jdbcType="VARCHAR"/>
+        <result property="permissionName" column="permission_name" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+    <select id="getList" resultMap="rolePermission">
+        select distinct  srp.role_id,sr.role_name,srp.status,srp.remark,permission_id from sys_role sr right join
+                                                                               sys_role_permission srp
+            on sr.role_id = srp.role_id
+    </select>
+<!--    #         select permission_id,permission_name,permission_path from sys_permission-->
+<!--    #         where status=0 and permission_id in (#{id})-->
+    <select id="permissionList" resultMap="permissions">
+     select distinct permission_id from sys_role_permission where role_id in(#{roleId})
+    </select>
+    <select id="permissionInfo" resultMap="permissionInfo">
+        select distinct status,remark,permission_name,permission_path from sys_permission
+        where status=0 and permission_id in (#{permissionId})
+    </select>
+
+    <select id="getRolePermissions" resultType="java.lang.String">
+        select distinct sp.permission_path
+        from sys_role_permission srp
+                 left join sys_permission sp on srp.permission_id = sp.permission_id
+        where role_id = #{roleId}
+          and srp.status = 0
+          and sp.status = 0
+
+    </select>
+
+
+</mapper>

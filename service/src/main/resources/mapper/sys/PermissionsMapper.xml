@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuqiang.service.mapper.sys.PermissionsMapper">
+  <sql id="baseColumn">
+      id,
+      permission_id permissionId,
+      permission_name,
+      permission_path,
+      status,
+      remark
+  </sql>
+    <select id="permissionList" resultType="com.liuqiang.model.bo.sys.PermissionsBo">
+       select <include refid="baseColumn"/>
+       from sys_permission
+       <where>
+           1=1
+          <if test="name != null and name != ''">
+              and permission_name like concat('%',#{name},'%')
+          </if>
+          <if test="path != null and path != ''">
+              and permission_path like concat('%',#{path},'%')
+          </if>
+       </where>
+    </select>
+    <select id="selectByPermissionId" resultType="com.liuqiang.model.bo.sys.PermissionsBo">
+        select <include refid="baseColumn"/>
+        from sys_permission
+       <where>
+           id in
+           <foreach collection="idList" item="item" index="index" open="(" close=")" separator=",">
+               #{item}
+           </foreach>
+
+
+       </where>
+    </select>
+</mapper>

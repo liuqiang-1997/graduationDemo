@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuqiang.service.mapper.servicelogic.MonthlyMapper">
+
+
+    <select id="getMonthlyData" resultType="com.liuqiang.model.bo.data.MonthlyDataBo">
+        select DATE_FORMAT(send_time,'%Y-%m') sendTime,count(send_time) total from pms_monthly
+        where monthly_id in (select stu_id from
+            sys_student where tea_id = #{teaId})
+          <if test="stuId != null and stuId != ''">
+              and monthly_id = #{stuId}
+          </if>
+         <if test="type != null and type != ''">
+             and type = #{type}
+         </if>
+           group by sendTime
+    </select>
+
+</mapper>

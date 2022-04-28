@@ -1,0 +1,72 @@
+2022-04-29 00:16:17.001  INFO 77771 --- [SpringContextShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-04-29 00:16:17.121  INFO 77771 --- [SpringContextShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-04-29 00:16:17.183  INFO 77771 --- [SpringContextShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-04-29 00:16:18.107  INFO 77771 --- [SpringContextShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-04-29 00:16:18.179  INFO 77771 --- [SpringContextShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2022-04-29 00:16:18.180  INFO 77771 --- [SpringContextShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2022-04-29 00:16:18.181  INFO 77771 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-04-29 00:16:18.201  INFO 77771 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-04-29 00:16:18.202  INFO 77771 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-04-29 00:17:11.993  WARN 78737 --- [main] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5003 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2022-04-29 00:17:17.007  INFO 78737 --- [main] com.liuqiang.service.ServiceApplication  : Starting ServiceApplication on 10011.local with PID 78737 (/Users/liuqiang/graduationDemo/service/target/classes started by liuqiang in /Users/liuqiang/graduationDemo)
+2022-04-29 00:17:17.008  INFO 78737 --- [main] com.liuqiang.service.ServiceApplication  : No active profile set, falling back to default profiles: default
+2022-04-29 00:17:18.637  INFO 78737 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-29 00:17:18.641  INFO 78737 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-29 00:17:18.689  INFO 78737 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26ms. Found 0 Redis repository interfaces.
+2022-04-29 00:17:19.366  INFO 78737 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1b24ea2a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-29 00:17:19.381  INFO 78737 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-29 00:17:19.863  INFO 78737 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-04-29 00:17:19.877  INFO 78737 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-29 00:17:19.878  INFO 78737 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-04-29 00:17:19.998  INFO 78737 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-29 00:17:19.999  INFO 78737 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2923 ms
+2022-04-29 00:17:20.952  INFO 78737 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-04-29 00:17:21.080  INFO 78737 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-04-29 00:17:43.745  INFO 78737 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-04-29 00:17:43.867  INFO 78737 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-04-29 00:17:44.250  INFO 78737 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7320750c, org.springframework.security.web.context.SecurityContextPersistenceFilter@629de8, org.springframework.security.web.header.HeaderWriterFilter@d271d6c, org.springframework.web.filter.CorsFilter@2570851e, org.springframework.security.web.authentication.logout.LogoutFilter@f575d2b, com.liuqiang.commons.filter.JwtTokenFilter@42b4df5a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1b6683c4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5b430541, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@67d8613, org.springframework.security.web.session.SessionManagementFilter@41463c56, org.springframework.security.web.access.ExceptionTranslationFilter@6fafbdac]
+2022-04-29 00:17:44.328  INFO 78737 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-04-29 00:17:45.418  INFO 78737 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2022-04-29 00:17:45.420  INFO 78737 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2022-04-29 00:17:45.444  INFO 78737 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 16 custom documentation plugin(s)
+2022-04-29 00:17:45.504  INFO 78737 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-04-29 00:17:45.723  INFO 78737 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: roleListUsingGET_1
+2022-04-29 00:17:45.796  INFO 78737 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-04-29 00:17:45.822  INFO 78737 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-04-29 00:17:45.838  INFO 78737 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-04-29 00:17:45.872  INFO 78737 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-04-29 00:17:45.898  INFO 78737 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-04-29 00:17:45.921  INFO 78737 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-04-29 00:17:45.965  INFO 78737 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-04-29 00:17:45.987  INFO 78737 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUsingPOST_1
+2022-04-29 00:17:45.991  INFO 78737 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-04-29 00:17:46.012  INFO 78737 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-04-29 00:17:46.032  INFO 78737 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-04-29 00:17:46.036  INFO 78737 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveRolePermissionUsingPOST_1
+2022-04-29 00:17:46.045  INFO 78737 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: searchUsingGET_1
+2022-04-29 00:17:46.048  INFO 78737 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-04-29 00:17:46.062  INFO 78737 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-04-29 00:17:46.065  INFO 78737 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-04-29 00:17:46.079  INFO 78737 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-04-29 00:17:46.110  INFO 78737 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUsingPOST_2
+2022-04-29 00:17:46.113  INFO 78737 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-04-29 00:17:46.121  INFO 78737 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2022-04-29 00:17:46.180  INFO 78737 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#71d0b8a4:0/SimpleConnection@4fe3199d [delegate=amqp://guest@127.0.0.1:5672/, localPort= 52694]
+2022-04-29 00:17:46.193  INFO 78737 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable or auto-delete Exchange (PRACTICE_EXCHANGE) durable:true, auto-delete:true. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2022-04-29 00:17:46.261 ERROR 78737 --- [AMQP Connection 127.0.0.1:5672] o.s.a.r.c.CachingConnectionFactory       : Channel shutdown: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'auto_delete' for exchange 'PRACTICE_EXCHANGE' in vhost '/': received 'true' but current is 'false', class-id=40, method-id=10)
+2022-04-29 00:17:47.283  INFO 78737 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable or auto-delete Exchange (PRACTICE_EXCHANGE) durable:true, auto-delete:true. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2022-04-29 00:17:47.291 ERROR 78737 --- [AMQP Connection 127.0.0.1:5672] o.s.a.r.c.CachingConnectionFactory       : Channel shutdown: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'auto_delete' for exchange 'PRACTICE_EXCHANGE' in vhost '/': received 'true' but current is 'false', class-id=40, method-id=10)
+2022-04-29 00:17:49.299  INFO 78737 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable or auto-delete Exchange (PRACTICE_EXCHANGE) durable:true, auto-delete:true. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2022-04-29 00:17:49.306 ERROR 78737 --- [AMQP Connection 127.0.0.1:5672] o.s.a.r.c.CachingConnectionFactory       : Channel shutdown: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'auto_delete' for exchange 'PRACTICE_EXCHANGE' in vhost '/': received 'true' but current is 'false', class-id=40, method-id=10)
+2022-04-29 00:17:53.315  INFO 78737 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable or auto-delete Exchange (PRACTICE_EXCHANGE) durable:true, auto-delete:true. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2022-04-29 00:17:53.325 ERROR 78737 --- [AMQP Connection 127.0.0.1:5672] o.s.a.r.c.CachingConnectionFactory       : Channel shutdown: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'auto_delete' for exchange 'PRACTICE_EXCHANGE' in vhost '/': received 'true' but current is 'false', class-id=40, method-id=10)
+2022-04-29 00:17:58.336  INFO 78737 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable or auto-delete Exchange (PRACTICE_EXCHANGE) durable:true, auto-delete:true. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2022-04-29 00:17:58.344 ERROR 78737 --- [AMQP Connection 127.0.0.1:5672] o.s.a.r.c.CachingConnectionFactory       : Channel shutdown: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'auto_delete' for exchange 'PRACTICE_EXCHANGE' in vhost '/': received 'true' but current is 'false', class-id=40, method-id=10)
+2022-04-29 00:17:58.352  INFO 78737 --- [main] o.s.a.r.l.SimpleMessageListenerContainer : Broker not available; cannot force queue declarations during start: java.io.IOException
+2022-04-29 00:17:58.423  INFO 78737 --- [main] com.liuqiang.service.ServiceApplication  : Started ServiceApplication in 57.346 seconds (JVM running for 64.388)
+2022-04-29 00:17:58.920  INFO 78737 --- [RMI TCP Connection(1)-192.168.1.10] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-29 00:17:58.921  INFO 78737 --- [RMI TCP Connection(1)-192.168.1.10] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-29 00:17:58.938  INFO 78737 --- [RMI TCP Connection(1)-192.168.1.10] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
+2022-04-29 00:33:34.022  WARN 78737 --- [http-nio-9999-exec-6] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/db_pms?charset=utf8&useSSL=false, version : 1.2.5, lastPacketReceivedIdleMillis : 934915
+2022-04-29 00:35:33.415  WARN 78737 --- [http-nio-9999-exec-8] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/db_pms?charset=utf8&useSSL=false, version : 1.2.5, lastPacketReceivedIdleMillis : 119291
+2022-04-29 00:37:36.479  WARN 78737 --- [http-nio-9999-exec-9] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/db_pms?charset=utf8&useSSL=false, version : 1.2.5, lastPacketReceivedIdleMillis : 64432

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuqiang.service.mapper.sys.SysLogMapper">
+
+    <sql id="baseColumn">
+        id,
+        user_name userName,
+        operation,
+        method,
+        params,
+        ip_address ipAddress,
+        create_time createTime
+    </sql>
+
+    <select id="selectByCondition" resultType="com.liuqiang.model.bo.sys.SysLogBo">
+        SELECT <include refid="baseColumn"/>
+        FROM sys_log
+        <where>
+            1=1
+            <if test="userName != null and userName != ''">
+               and user_name LIKE CONCAT('%',#{userName},'%')
+            </if>
+            <if test="ipAddress != null and ipAddress != ''">
+                and ip_address like concat('%',#{ipAddress},'%')
+            </if>
+            <if test="createTime != null and createTime != '' and endTime != null and endTime != ''">
+                and create_time between DATE_FORMAT(#{createTime},'%Y-%m') and DATE_FORMAT(#{endTime},'%Y-%m')
+            </if>
+        </where>
+    </select>
+</mapper>
